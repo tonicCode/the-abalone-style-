@@ -8,29 +8,27 @@ export class Graphics {
         }
         this.cnvWidth = this.cnv.width;
         this.cnvHeight = this.cnv.height;
-        this.caseX = 20;
-        this.caseY = 0;
+        this.plateauPosX = this.cnvWidth / 4;
+        this.plateauPosY = this.cnvHeight / 4;
     }
     toCreatePlateau() {
         let caseWidth = 20;
         let caseHeight = 20;
         // let y=0;
         // let x=20;
-        let baseRang = 120;
-        let baseCol = 140;
-        if (this.caseX !== baseRang && this.caseY < 30) {
-            this.caseX += caseWidth;
-            console.log("x:", this.caseX);
+        let baseRang = 7;
+        let baseCol = 7;
+        let cadreExtWidth = 140;
+        let cadreExHeight = 140;
+        // sortie du plateau limite rouge  
+        this.ctx.strokeStyle = "red";
+        this.ctx.strokeRect(this.plateauPosX + 20, this.plateauPosY + 20, cadreExtWidth, cadreExHeight);
+        for (let x = 1; x <= 24 * baseRang; x += caseWidth) {
+            for (let y = 1; y <= 24 * baseCol; y += caseHeight) {
+                this.ctx.strokeStyle = "green";
+                this.ctx.strokeRect(x + this.plateauPosX, y + this.plateauPosY, caseWidth, caseHeight);
+            }
         }
-        else {
-            // this.caseY+=caseHeight;
-            this.caseX = 20;
-        }
-        // if(this.caseY !== baseCol){
-        //     this.caseY+=caseHeight;
-        // }
-        this.ctx.strokeStyle = "green";
-        this.ctx.strokeRect(this.caseX, this.caseY, caseWidth, caseHeight);
     }
 }
 //# sourceMappingURL=Graphics.js.map
