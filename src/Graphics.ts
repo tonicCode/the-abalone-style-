@@ -10,7 +10,9 @@ public cnvHeight:number;
 public  plateauPosX:number;
 public plateauPosY:number;
 public getX: number;
-public pions!: Pions[];
+public pionsA!: Pions[];
+public pionsB!:Pions[];
+ public getY: number;
 
 
 constructor(){
@@ -27,8 +29,10 @@ this.plateauPosX=this.cnvWidth/4;
 this.plateauPosY=this.cnvHeight/4;
 
 this.getX=0;
+this.getY=0;
 
-this.pions=[];
+this.pionsA=[];
+this.pionsB=[];
 this.toDrawPions();
 
 }
@@ -84,30 +88,66 @@ this.ctx!.strokeStyle="red";
 this.ctx!.strokeRect(this.plateauPosX+20,this.plateauPosY+20,cadreExtWidth,cadreExHeight);
 
 
+
 }
 
 
 
 
-createJeton() : Pions[]{
-
-    // this.pions:Pions[]=[];
+createJeton() : [Pions[],Pions[]]{
 
 
-this.pions.push(new Pions(this.getX,this.plateauPosY,1) , new Pions(10,10,2)) ;
-
-console.log(this.getX)
-// this.ctx!.fillStyle="blue";
-// this.ctx!.fillRect(this.getX,0,10,10);
 
 
-return this.pions;
+this.getX=this.plateauPosX+20;
+this.getY=this.plateauPosY+20;
+
+this.pionsA.push(new Pions(this.getX,this.getY,"A1") , new Pions(this.getX+20,this.getY,"B1") , new Pions(this.getX+40 ,this.getY, "C1" ) , new Pions(this.getX+60, this.getY, "D1") , new Pions(this.getX+80 , this.getY , "E1") , new Pions(this.getX , this.getY+20 , "A2") ,new Pions (this.getX+20 , this.getY+20 , "B2") , new Pions(this.getX+40,this.getY+20,"c2"),new Pions(this.getX+60,this.getY+20,"D2") , new Pions(this.getX+80,this.getY+20,"E2") ,new Pions(this.getX+20,this.getY+40,"B3"),new Pions(this.getX+40,this.getY+40,"C3") ,new Pions(this.getX+60,this.getY+40,"D3")  ) ;
+
+this.pionsB.push(new Pions(this.getX+120,this.getY+120,"A1") , new Pions(this.getX+100,this.getY+120,"G1") , new Pions(this.getX+80 ,this.getY+120, "E1" ) , new Pions(this.getX+60, this.getY+120, "D7") , new Pions(this.getX+40 , this.getY+120 , "C7") , new Pions(this.getX+120 , this.getY+100 , "B7") ,new Pions (this.getX+100 , this.getY+100 , "B2") , new Pions(this.getX+80,this.getY+100,"E6"),new Pions(this.getX+60,this.getY+100,"C6") , new Pions(this.getX+40,this.getY+100,"E2") ,new Pions(this.getX+100,this.getY+80,"F5"),new Pions(this.getX+80,this.getY+80,"E5") ,new Pions(this.getX+60,this.getY+80,"D5")  ) ;
+
+
+console.log("getx :", this.pionsA);
+
+
+
+
+
+return [this.pionsA,this.pionsB];
 }
 
 
 toDrawPions(){
 
-this.ctx!.fillRect(this.createJeton()[0].posX,this.createJeton()[0].posY,10,10);
+  const [lesPions1, lesPions2] = this.createJeton();
+
+for(let i=0; i<=lesPions1.length-1;i++){
+
+    
+   
+    this.ctx!.fillStyle="blue";
+   this.ctx!.fillRect(lesPions1[i].posX,lesPions1[i].posY,20,20);     
+
+  console.log(i);
+
+}
+
+
+for(let j=0; j<=lesPions2.length-1;j++){
+
+//     this.ctx!.save();
+//  this.ctx!.restore();
+
+
+    this.ctx!.fillStyle="red";
+   this.ctx!.fillRect(lesPions2[j].posX,lesPions2[j].posY,20,20);     
+
+
+
+}
+
+
+
 
 
 }

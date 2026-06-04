@@ -1,8 +1,8 @@
 export class Pions {
-    constructor(posX, posY, numero) {
+    constructor(posX, posY, name) {
         this.posX = posX;
         this.posY = posY;
-        this.numero = numero;
+        this.name = name;
     }
 }
 //# sourceMappingURL=Pions.js.map
