@@ -1,6 +1,7 @@
 
 
 import {Graphics} from './Graphics.js';
+import {Pions} from './Pions.js';
 
 
 class Main{
@@ -19,6 +20,7 @@ constructor(){
 
 start() :void{
       this.graphics.toCreatePlateau();
+      //this.graphics.createJeton();
 // getComputedStyle(document.getElementById("cnv")).backgroundColor
 
 

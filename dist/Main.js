@@ -5,6 +5,7 @@ class Main {
     }
     start() {
         this.graphics.toCreatePlateau();
+        //this.graphics.createJeton();
         // getComputedStyle(document.getElementById("cnv")).backgroundColor
     }
     loop() {
