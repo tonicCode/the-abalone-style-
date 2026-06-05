@@ -1,7 +1,11 @@
+import { Curseurs } from './Curseur.js';
 import { Graphics } from './Graphics.js';
+import { Controls } from "./Controls.js";
 class Main {
     constructor() {
         this.graphics = new Graphics();
+        this.curseurs = new Curseurs(100, 120, 20, 20);
+        this.controls = new Controls(this.graphics, 20, 20, this.curseurs);
     }
     start() {
         this.graphics.toCreatePlateau();
