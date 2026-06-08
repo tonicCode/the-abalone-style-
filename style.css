@@ -1,12 +1,21 @@
+body{
+  margin:0;
+  
+  
+  
+}
+
+
 #containerGame{
 
 
 display: flex;
 justify-content: center;
+flex-direction:column;
 
 border: 1px solid black;
-
-height: 400px;
+/*align-items: center;*/
+/*height: 390px;*/
 
 
 
@@ -19,7 +28,13 @@ background-color: grey;
 
 }
 
+#btnValid{
 
+ 
+min-width: 0;
+height:50px;
+  
+}
 
 
 

@@ -18,7 +18,13 @@ export class Controls {
             // pour chaque pion bleu 
             this.controlCursor.pionsA.forEach(ele => {
                 if (mouseX >= ele.posX && mouseX <= ele.posX + ele.width && mouseY >= ele.posY && mouseY <= ele.posY + ele.height) {
+                    
+                    
                     this.controlCursor.drawCursor(ele.posX, ele.posY, this.paraCurseur.cursorWidth, this.paraCurseur.cursorHeight);
+                    
+               this.controlCursor.toDisplay(ele.name);
+                    
+                
                 }
             });
         });

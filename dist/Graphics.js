@@ -16,6 +16,11 @@ export class Graphics {
         this.pionsA = [];
         this.pionsB = [];
         this.toDrawPions();
+        this.affichage=document.getElementById("display");
+        this.cadreExHeight=140;
+        this.cadreExtWidth=140;
+        
+        
     }
     toCreatePlateau() {
         let caseWidth = 20;
@@ -24,8 +29,8 @@ export class Graphics {
         // let x=20;
         let baseRang = 7;
         let baseCol = 7;
-        let cadreExtWidth = 140;
-        let cadreExHeight = 140;
+        //let cadreExtWidth = 140;
+        //let cadreExHeight = 140;
         for (let x = 1; x <= 24 * baseRang; x += caseWidth) {
             for (let y = 1; y <= 24 * baseCol; y += caseHeight) {
                 this.ctx.strokeStyle = "green";
@@ -35,7 +40,7 @@ export class Graphics {
         }
         // sortie du plateau limite rouge
         this.ctx.strokeStyle = "red";
-        this.ctx.strokeRect(this.plateauPosX + 20, this.plateauPosY + 20, cadreExtWidth, cadreExHeight);
+        this.ctx.strokeRect(this.plateauPosX + 20, this.plateauPosY + 20, this.cadreExtWidth, this.cadreExHeight);
     }
     createJeton() {
         this.getX = this.plateauPosX + 20;
@@ -60,5 +65,19 @@ export class Graphics {
         this.ctx.strokeStyle = "yellow";
         this.ctx.strokeRect(posX, posY, width, height);
     }
+    
+    
+    
+   //affiche les coordonnées pions plateau 
+    toDisplay(columnRowName){
+    this.affichage.innerHTML=columnRowName ; 
+        
+        
+        
+    }
+    
+    
+    
+    
 }
 //# sourceMappingURL=Graphics.js.map
