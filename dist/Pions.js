@@ -1,8 +1,8 @@
 export class Pions {
-    constructor(posX, posY, name, width, height) {
+    constructor(posX, posY, color, width, height) {
         this.posX = posX;
         this.posY = posY;
-        this.name = name;
+        this.color = color;
         this.width = width;
         this.height = height;
     }

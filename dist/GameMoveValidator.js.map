@@ -1,0 +1,1 @@
+{"version":3,"file":"GameMoveValidator.js","sourceRoot":"","sources":["../src/GameMoveValidator.ts"],"names":[],"mappings":"AAEA,MAAM,OAAO,iBAAiB;IAK9B,YAAY,aAAwB;QAEpC,IAAI,CAAC,GAAG,GAAC,aAAa,CAAC;QACvB,IAAI,CAAC,gBAAgB,EAAE,CAAC;IAGxB,CAAC;IAGD,gBAAgB;QAEhB,IAAI,CAAC,GAAG,CAAC,QAAQ,CAAC;IAIlB,CAAC;CAMA"}

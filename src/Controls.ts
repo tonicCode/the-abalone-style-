@@ -1,27 +1,37 @@
 
 import { Curseurs } from "./Curseur.js";
 import { Graphics } from "./Graphics.js";
+import { Pions } from "./Pions.js";
+import { Plateaux } from "./Plateaux.js";
 
 export class Controls{
 
     private paraCurseur: Curseurs;
+    private plat!:Plateaux;
      private dx;
      private dy;
     public controlCursor;
+
     // private widthOfCursor;
     // private heightOfCursor;
 
 
- constructor(CursorDraw : Graphics, dx : number , dy :number , paraCurseur : Curseurs){
+ constructor(CursorDraw : Graphics, dx : number , dy :number , paraCurseur : Curseurs , plat : Plateaux){
 
 //  CursorDraw.drawCursor(this.posX, this.posY , this.widthOfCursor, this.heightOfCursor);
+
+
 this.paraCurseur=paraCurseur;
 this.dx=dx;
 this.dy=dy;
 
 this.controlCursor=CursorDraw;
+this.plat=plat;
 this.toPushKey();
 this.toClick();
+
+
+
 
 
 }
@@ -35,7 +45,8 @@ toClick(){
 
 
 
-    
+    const cas=this.plat.getCase(0,0);
+    console.log("coordonnee : ",cas?.coordonnee);
 
       
 

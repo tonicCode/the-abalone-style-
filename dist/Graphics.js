@@ -16,23 +16,25 @@ export class Graphics {
         this.pionsA = [];
         this.pionsB = [];
         this.toDrawPions();
-        this.affichage=document.getElementById("display");
-        this.cadreExHeight=140;
-        this.cadreExtWidth=140;
-        
-        
+        this.plateauZoneHorizontal = 140;
+        this.plateauZoneVertical = 140;
+        // this.pionName;
     }
-    toCreatePlateau() {
+    toCreatePlateauDisplay() {
         let caseWidth = 20;
         let caseHeight = 20;
         // let y=0;
         // let x=20;
         let baseRang = 7;
         let baseCol = 7;
-        //let cadreExtWidth = 140;
-        //let cadreExHeight = 140;
-        for (let x = 1; x <= 24 * baseRang; x += caseWidth) {
-            for (let y = 1; y <= 24 * baseCol; y += caseHeight) {
+        // let cadreExtWidth=140;
+        // let cadreExHeight=140;
+        for (let x = 0; x <= 24 * baseRang; x += caseWidth) {
+            for (let y = 0; y <= 24 * baseCol; y += caseHeight) {
+                //  console.log("grille x: ", x , "y :",y);
+                //A1  0, 0
+                //B1  0, 20
+                //C1  0, 40
                 this.ctx.strokeStyle = "green";
                 this.ctx.strokeRect(x + this.plateauPosX, y + this.plateauPosY, caseWidth, caseHeight);
                 // this.ctx!.fillText("A", x+this.plateauPosX , 100);
@@ -40,7 +42,7 @@ export class Graphics {
         }
         // sortie du plateau limite rouge
         this.ctx.strokeStyle = "red";
-        this.ctx.strokeRect(this.plateauPosX + 20, this.plateauPosY + 20, this.cadreExtWidth, this.cadreExHeight);
+        this.ctx.strokeRect(this.plateauPosX + 20, this.plateauPosY + 20, this.plateauZoneHorizontal, this.plateauZoneVertical);
     }
     createJeton() {
         this.getX = this.plateauPosX + 20;
@@ -52,6 +54,7 @@ export class Graphics {
     toDrawPions() {
         const [lesPions1, lesPions2] = this.createJeton();
         for (let i = 0; i <= lesPions1.length - 1; i++) {
+            // console.log("p : ", i);
             this.ctx.fillStyle = "blue";
             this.ctx.fillRect(lesPions1[i].posX, lesPions1[i].posY, 20, 20);
         }
@@ -65,19 +68,5 @@ export class Graphics {
         this.ctx.strokeStyle = "yellow";
         this.ctx.strokeRect(posX, posY, width, height);
     }
-    
-    
-    
-   //affiche les coordonnées pions plateau 
-    toDisplay(columnRowName){
-    this.affichage.innerHTML=columnRowName ; 
-        
-        
-        
-    }
-    
-    
-    
-    
 }
 //# sourceMappingURL=Graphics.js.map

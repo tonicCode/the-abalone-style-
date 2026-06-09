@@ -4,6 +4,8 @@ import { Curseurs } from './Curseur.js';
 import {Graphics} from './Graphics.js';
 import {Pions} from './Pions.js';
 import { Controls } from "./Controls.js";
+import { GameMoveValidator } from './GameMoveValidator.js';
+import { Plateaux } from './Plateaux.js';
 
 
 class Main{
@@ -11,6 +13,10 @@ class Main{
 private graphics:any;
 private controls:any;
 private curseurs:any;
+private mesPions!:Pions;
+private gmv:any;
+private createPlateau!:any;
+
 
 
 constructor(){
@@ -18,14 +24,16 @@ constructor(){
 
     this.graphics=new Graphics();
     this.curseurs=new Curseurs(100,120,20,20);
-    this.controls=new Controls(this.graphics , 20 , 20 ,this.curseurs );
-  
+    this.createPlateau= new Plateaux();
+    this.controls=new Controls(this.graphics , 20 , 20 ,this.curseurs, this.createPlateau);
+
+    this.gmv=new GameMoveValidator(this.graphics);
 
 
 }
 
 start() :void{
-      this.graphics.toCreatePlateau();
+      this.graphics.toCreatePlateauDisplay();
       
       //this.graphics.createJeton();
 // getComputedStyle(document.getElementById("cnv")).backgroundColor
