@@ -45,7 +45,7 @@ toClick(){
 
 
 
-    const cas=this.plat.getCase(0,0);
+    const cas=this.plat.getCase(2,0);
     console.log("coordonnee : ",cas?.coordonnee);
 
       
