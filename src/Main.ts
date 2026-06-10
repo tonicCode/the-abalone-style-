@@ -25,9 +25,10 @@ constructor(){
     this.graphics=new Graphics();
     this.curseurs=new Curseurs(100,120,20,20);
     this.createPlateau= new Plateaux();
-    this.controls=new Controls(this.graphics , 20 , 20 ,this.curseurs, this.createPlateau);
+        this.gmv=new GameMoveValidator(this.graphics,this.createPlateau);
 
-    this.gmv=new GameMoveValidator(this.graphics);
+    this.controls=new Controls(this.graphics , 20 , 20 ,this.curseurs, this.createPlateau,this.gmv);
+
 
 
 }

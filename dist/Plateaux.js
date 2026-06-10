@@ -54,9 +54,10 @@ export class Plateaux {
         this.cases[38].pions = new Pions(3, 5, "red", 20, 20);
         this.cases[37].pions = new Pions(2, 5, "red", 20, 20);
         // range 3 playeur red
-        this.cases[33].pions = new Pions(5, 4, "blue", 20, 20);
-        this.cases[32].pions = new Pions(4, 4, "blue", 20, 20);
-        this.cases[31].pions = new Pions(3, 4, "blue", 20, 20);
+        this.cases[33].pions = new Pions(5, 4, "red;", 20, 20);
+        this.cases[32].pions = new Pions(4, 4, "red;", 20, 20);
+        this.cases[31].pions = new Pions(3, 4, "red;", 20, 20);
+        return this.cases;
     }
 }
 //# sourceMappingURL=Plateaux.js.map
