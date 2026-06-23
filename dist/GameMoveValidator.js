@@ -9,7 +9,7 @@ export class GameMoveValidator {
         let test = "";
         tab.forEach(elem => {
             if (elem.pions === null) {
-                console.log(elem.x);
+               // console.log(elem.x);
                 return elem.coordonnee;
             }
             // return test;
