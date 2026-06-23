@@ -112,12 +112,17 @@ export class Graphics {
             this.ctx.fillRect(lesPions2[j].posX, lesPions2[j].posY, 20, 20);
         }*/
     }
-    drawCursor(curseurs) {
+    drawCursor(curseurs , cp) {
       
  
        
-        //this.ctx!.clearRect(100,200,posX,posY);
-  this.ctx.strokeStyle="yellow";
+        this.ctx.clearRect(0,0,this.cnv.width,this.cnv.height);
+  
+        //redessine pions et plateau apres avancement du curseur  
+  this.toCreatePlateauDisplay(cp); 
+this.toDrawPions(cp);
+        this.ctx.strokeStyle="yellow";
+
   
 // if(!curseurs) return;
   console.log("dessine",curseurs.posX  );
@@ -125,6 +130,8 @@ export class Graphics {
 this.ctx.strokeRect(curseurs.posX,curseurs.posY
 ,curseurs.cursorWidth,curseurs.cursorHeight);
    
+// this.toCreatePlateauDisplay(cp);
+
   // this.main.update();
 
    

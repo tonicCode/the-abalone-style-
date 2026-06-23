@@ -30,7 +30,7 @@ class Main {
 
         this.graphics.toDrawPions(this.createPlateau);
 // this.curseurs.createCurseur(this.createPlateau.createBorder().posX , this.createPlateau.createBorder().posY);
- this.graphics.drawCursor(this.createPlateau.newCurseur);
+ this.graphics.drawCursor(this.createPlateau.newCurseur , this.createPlateau);
 
         this.controls.toClick(this.createPlateau);
        
@@ -54,7 +54,13 @@ class Main {
                 // this.createPlateau.createCurseur();
 
 //console.log("dans update :" ,this.createPlateau.createCurseur());
-       this.graphics.drawCursor(this.createPlateau.newCurseur); 
+        this.graphics.toCreatePlateauDisplay(this.createPlateau);
+      
+        this.graphics.toDrawPions(this.createPlateau);
+
+this.graphics.drawCursor(this.createPlateau.newCurseur , this.createPlateau); 
+       
+       
        // this.controls.toClick(this.createPlateau);
 
 
