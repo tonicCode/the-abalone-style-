@@ -48,6 +48,7 @@ case "bas":
 
 
   moveCursor.toMove("bas");   
+
   this.update();
      });
 
@@ -98,7 +99,7 @@ break;
 
 
 
-  moveCursor.toMove("righ");   
+  moveCursor.toMove("right");   
   this.update();
      });
 

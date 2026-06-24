@@ -3,7 +3,12 @@ import { Pions } from "./Pions.js";
 import {Curseurs} from "./Curseur.js";
 
 export class Plateaux {
-    constructor() {
+    constructor( ) {
+        this.x=97.5;
+        this.y=100;
+this.w=180;
+this.h=180;
+
         this.cases = [];
         this.coordonAlphabet = [];
         this.toCreateLogicalPlateau();
@@ -13,6 +18,10 @@ export class Plateaux {
      this.curseurs=new Curseurs();
 this.newCurseur=new Curseurs();
 this.border=null;
+
+this.ext={};
+// this.limitX=null;
+// this.limitY=null;
 
 
        // this.main=main;
@@ -104,6 +113,18 @@ this.border=null;
     return this.cases.find(c => c.x === x && c.y === y);
 }
    
+
+//creation de la zone exterieur
+
+createOutside(){
+
+    this.ext={posX: this.x, posY: this.y, w:this.w, h:this.h }
+
+
+return this.ext;
+}
+
+
    
    //creation des limites du plateau
    createBorder(){
@@ -121,7 +142,19 @@ this.border=null;
    }
    
    
-    
+    createLimit(limit={}){
+
+limit={h : this.border.posY, b : this.border.posY+this.border.height , l :this.border.posX , r: this.border.posX + this.border.width}
+
+
+
+
+return limit;
+    }
+
+
+
+
    
   
    
@@ -129,19 +162,25 @@ this.border=null;
     // console.log("xxxx", this.createCurseur())
 //this.newCurseur=new Curseurs();
 
+//this.limitY=this.border.posY+this.border.height;
 
-if(direction === "bas"){
+
+
+console.log(this.createLimit());
+
+
+if(direction === "bas" && this.newCurseur.posY < this.createLimit().b ){
      this.newCurseur.posY=this.curseurs.posY+=20;
-}else if(direction === "haut"){
+}else if(direction === "haut" && this.newCurseur.posY>this.createLimit().h){
  
    this.newCurseur.posY=this.curseurs.posY-=20;
 
 
-}else if(direction === "left"){
+}else if(direction === "left" && this.newCurseur.posX> this.createLimit().l){
 
  this.newCurseur.posX=this.curseurs.posX-=20;
 
-}else if(direction === "right"){
+}else if(direction === "right" && this.newCurseur.posX < this.createLimit().r ){
 
  this.newCurseur.posX=this.curseurs.posX+=20;
 

@@ -71,10 +71,27 @@ export class Graphics {
  , cp.createBorder().posY , cp.createBorder().width, cp.createBorder().height
 );
    
-  // console.log("px",this.plateauPosY)
+ 
    
     }
-    
+ 
+    // draw outside 
+
+    toDrawOutside(createOutside){
+console.log(" out :",createOutside)
+
+
+ this.ctx.strokeStyle="yellow";
+this.ctx.strokeRect(createOutside.posX, createOutside.posY , createOutside.w , createOutside.h);
+
+
+
+    }
+
+
+
+
+
     toDrawPions(c) {
      let pionsWidth=20;
      let pionsHeight=20;
@@ -125,7 +142,7 @@ this.toDrawPions(cp);
 
   
 // if(!curseurs) return;
-  console.log("dessine",curseurs.posX  );
+  // console.log("dessine",curseurs.posX  );
 
 this.ctx.strokeRect(curseurs.posX,curseurs.posY
 ,curseurs.cursorWidth,curseurs.cursorHeight);
