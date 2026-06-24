@@ -9,7 +9,7 @@ export class Controls {
     this.controlCursor = CursorDraw;
         this.verify = verify;
         //this.plat = plat;
-        this.toPushKey();
+      //  this.toPushKey();
 this.btnSelect=document.getElementsByTagName("input");
        // this.toClick();
        this.update=update;
@@ -150,18 +150,59 @@ break;
             });*/
      
     }
-    toPushKey() {
+    toPushKey(moveCursor) {
         document.addEventListener("keydown", (event) => {
             switch (event.key) {
                 case "ArrowRight":
-                    this.paraCurseur.posX += this.dx;
-                    this.controlCursor.drawCursor(this.paraCurseur.posX, this.paraCurseur.posY, this.paraCurseur.cursorWidth, this.paraCurseur.cursorHeight);
-                    //  console.log(event.key);
-                    this.toMove(0, 1 + this.dy);
-                    //  let curseurs=new Curseurs(100,100,10,10);
-                    // this.controlCursor.drawCursor(100,100,10,10);
+                  
+                
+  moveCursor.toMove("right");   
+  this.update();
+                
+                
                     break;
-            }
+            
+                           case "ArrowLeft":
+                  
+                
+  moveCursor.toMove("left");   
+  this.update();
+                
+                
+                    break;
+            
+                           case "ArrowDown":
+                  
+                
+  moveCursor.toMove("bas");   
+  this.update();
+                
+                
+                    break;
+
+               case "ArrowUp":
+                  
+                
+  moveCursor.toMove("haut");   
+  this.update();
+                
+                
+                    break;
+
+
+
+
+
+
+
+
+
+
+            
+            
+            
+            
+                }
         });
     }
 }

@@ -37,6 +37,7 @@ this.graphics.toDrawOutside(this.createPlateau.ext);
 
 
         this.controls.toClick(this.createPlateau);
+          this.controls.toPushKey(this.createPlateau);
        
 // console.log(this.createPlateau.newCurseur);
 
