@@ -62,8 +62,9 @@ this.graphics.toDrawOutside(this.createPlateau.ext);
       
         this.graphics.toDrawPions(this.createPlateau);
 
-this.graphics.drawCursor(this.createPlateau.newCurseur , this.createPlateau); 
   
+this.graphics.drawCursor(this.createPlateau.newCurseur , this.createPlateau); 
+        this.graphics.toDrawOutside(this.createPlateau.ext);
        // this.controls.toClick(this.createPlateau);
 
 

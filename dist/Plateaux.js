@@ -144,7 +144,7 @@ return this.ext;
    
     createLimit(limit={}){
 
-limit={h : this.border.posY, b : this.border.posY+this.border.height , l :this.border.posX , r: this.border.posX + this.border.width}
+limit={h : this.border.posY, b : this.border.posY+this.border.height-this.curseurs.cursorHeight , l :this.border.posX , r: this.border.posX + this.border.width-this.curseurs.cursorWidth}
 
 
 
