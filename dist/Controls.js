@@ -29,7 +29,7 @@ this.btnSelect=document.getElementsByTagName("input");
     toClick(moveCursor) {
         
         
-        
+     
         
         //if case.pions !== null
         // alors +1 est possible
@@ -44,7 +44,7 @@ case "bas":
            // const mouseX = event.offsetX;
             //const mouseY = event.offsetY;
    
-
+  
 
 
   moveCursor.toMove("bas");   
@@ -126,13 +126,24 @@ break;
 // control clavier pc 
 
 
-    toPushKey(moveCursor) {
+
+//curseur touche ->  <- 
+
+    toPushKey(moveCursor, validator) {
+
+   
+
         document.addEventListener("keydown", (event) => {
+     
+          
             switch (event.key) {
+
+
                 case "ArrowRight":
-                  
+               
                 
   moveCursor.toMove("right");   
+ 
   this.update();
                 
                 
@@ -167,6 +178,15 @@ break;
 
 
 
+// touche enter validation 
+
+
+
+ case "Enter" : validator.toVerifEmptyCase();
+ moveCursor.createSelection();
+ 
+ 
+ break;
 
 
 

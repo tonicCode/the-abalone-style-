@@ -129,7 +129,7 @@ this.ctx.strokeRect(createOutside.posX, createOutside.posY , createOutside.w , c
             this.ctx.fillRect(lesPions2[j].posX, lesPions2[j].posY, 20, 20);
         }*/
     }
-    drawCursor(curseurs , cp) {
+    drawCursor(curseurs , cp , gmv) {
       
  
        
@@ -138,6 +138,7 @@ this.ctx.strokeRect(createOutside.posX, createOutside.posY , createOutside.w , c
         //redessine pions et plateau apres avancement du curseur  
   this.toCreatePlateauDisplay(cp); 
 this.toDrawPions(cp);
+this.toDrawSelection(cp ,gmv);
         this.ctx.strokeStyle="yellow";
 
   
@@ -155,5 +156,34 @@ this.ctx.strokeRect(curseurs.posX,curseurs.posY
    
    
     }
+
+
+
+toDrawSelection(plateau, moveable ){
+
+console.log("movable : ",moveable.isEmpty);
+console.log("pions : ",plateau);
+
+// if(moveable){
+this.ctx.strokeStyle="red";
+
+
+let x=plateau.countX*20;
+let y=plateau.countY*20;
+
+
+if(moveable.isEmpty){
+
+this.ctx.strokeRect(x, y,20,20);
+}
+
+
+}
+
+
+
+
+
+
 }
 //# sourceMappingURL=Graphics.js.map

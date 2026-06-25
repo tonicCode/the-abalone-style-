@@ -20,6 +20,11 @@ this.newCurseur=new Curseurs();
 this.border=null;
 
 this.ext={};
+this.countX=0;
+this.countY=0;
+
+this.selectionsPions=[];
+
 // this.limitX=null;
 // this.limitY=null;
 
@@ -164,39 +169,65 @@ return limit;
 
 //this.limitY=this.border.posY+this.border.height;
 
+// this.count=0;
 
-
-console.log(this.createLimit());
+// console.log(this.createLimit());
 
 
 if(direction === "bas" && this.newCurseur.posY < this.createLimit().b ){
      this.newCurseur.posY=this.curseurs.posY+=20;
+
+this.countY++;
+
 }else if(direction === "haut" && this.newCurseur.posY>this.createLimit().h){
  
    this.newCurseur.posY=this.curseurs.posY-=20;
-
+this.countY--;
 
 }else if(direction === "left" && this.newCurseur.posX> this.createLimit().l){
 
  this.newCurseur.posX=this.curseurs.posX-=20;
-
+ this.countX--;
 }else if(direction === "right" && this.newCurseur.posX < this.createLimit().r ){
 
  this.newCurseur.posX=this.curseurs.posX+=20;
+ this.countX++;
+
+
 
 }
+//   console.log("count : ", this.countX );
+
+    //  console.log("xxxx", this.newCurseur);
 
 
-     console.log("xxxx", this.newCurseur);
-
-    //this.update();
 
      return this.newCurseur;
    }
    
    
+// getPositions(){
 
 
+
+// }
+
+createSelection(){
+
+// il faudra dire si la case est rempli alors encadrer le pions
+
+
+// console.log(
+//  this.getCase(this.countX, this.countY)
+//  );
+
+let positions=this.getCase(this.countX, this.countY)
+
+
+this.selectionsPions.push(positions);
+// console.log("selected pion : ",this.selectionsPions)
+
+}
 
 
    

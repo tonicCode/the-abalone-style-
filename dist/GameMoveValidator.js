@@ -1,23 +1,45 @@
 export class GameMoveValidator {
-    constructor(groupeDePions, plateaux) {
-        this.gdp = groupeDePions;
+    constructor( plateaux) {
+        // this.casePions = groupeDePions;
+
+this.isEmpty;
+
         this.plateaux = plateaux;
         this.toVerifEmptyCase();
     }
+
+
+    
+
+
+// test(){
+
+
+
+// }
+
+
+
+
+
     toVerifEmptyCase() {
 
+// if(this.plateaux.cases.pions !== null){
+
+let rslt=this.plateaux.getCase(this.plateaux.countX, this.plateaux.countY).pions;
+
+console.log('rslt :' ,rslt);
 
 
+if(rslt !== null){
+this.isEmpty=false;
 
+//  console.log( "vous etes en : " ,this.plateaux.getCase(this.plateaux.countX, this.plateaux.countY));
+}else{
+    this.isEmpty=true;
+}
 
-
-        
-        // let tab = this.plateaux.createPions();
-        // let test = "";
-        // tab.forEach(elem => {
-        //     if (elem.pions === null) {
-        //        // console.log(elem.x);
-        //         return elem.coordonnee;
+return this.isEmpty;
             }
             // return test;
       //  });

@@ -3,17 +3,18 @@ import { Graphics } from './Graphics.js';
 import { Controls } from "./Controls.js";
 import { GameMoveValidator } from './GameMoveValidator.js';
 import { Plateaux } from './Plateaux.js';
+import { Cases } from './Cases.js';
 class Main {
     constructor() {
         this.graphics = new Graphics();
         this.controls = new Controls(this.graphics, 20, 20, this.gmv ,this.update.bind(this));
    
-
+this.case=new Cases();
         this.createPlateau = new Plateaux();
 
         this.curseurs = new Curseurs();
     
-        // this.gmv = new GameMoveValidator(this.graphics, this.createPlateau);
+this.gmv = new GameMoveValidator( this.createPlateau);
 
    
    
@@ -30,15 +31,18 @@ class Main {
 
         this.graphics.toDrawPions(this.createPlateau);
 // this.curseurs.createCurseur(this.createPlateau.createBorder().posX , this.createPlateau.createBorder().posY);
- this.graphics.drawCursor(this.createPlateau.newCurseur , this.createPlateau);
+ this.graphics.drawCursor(this.createPlateau.newCurseur , this.createPlateau ,this.gmv);
 
  this.createPlateau.createOutside();
 this.graphics.toDrawOutside(this.createPlateau.ext);
 
 
         this.controls.toClick(this.createPlateau);
-          this.controls.toPushKey(this.createPlateau);
-       
+          this.controls.toPushKey(this.createPlateau,this.gmv);
+  
+          
+// this.graphics.toDrawSelection(this.createPlateau.selectionsPions,this.gmv.isEmpty);
+
 // console.log(this.createPlateau.newCurseur);
 
 
@@ -64,9 +68,10 @@ this.graphics.toDrawOutside(this.createPlateau.ext);
         this.graphics.toDrawPions(this.createPlateau);
 
   
-this.graphics.drawCursor(this.createPlateau.newCurseur , this.createPlateau); 
+this.graphics.drawCursor(this.createPlateau.newCurseur , this.createPlateau,this.gmv); 
         this.graphics.toDrawOutside(this.createPlateau.ext);
        // this.controls.toClick(this.createPlateau);
+// this.graphics.toDrawSelection(this.createPlateau.selectionsPions,this.gmv.isEmpty);
 
 
 //    this.loop();
