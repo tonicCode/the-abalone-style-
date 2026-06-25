@@ -36,11 +36,146 @@ height:50px;
   
 }
 
-#btnMove input{
+#containerButtons  {
+
+display: flex;
+
+flex-direction: row;
+justify-content: center;
+
+/* align-self: center; */
+position: relative;
+background-color: blueviolet;
+width: 100%;
+height: 300px;
+
+/* justify-self: center;
+flex-direction: column;
+  margin: auto;
+   border: 1px solid black;
+ 
   margin: 40px;
- background-color: red; 
- height:50px;
-  
-  
+
+ 
+ height:100px;  */
 }
+
+#btnMove{
+position:absolute;
+display: flex;
+
+
+background-color: orange;
+justify-content: center;
+align-self: center;
+align-items: center;
+width: 180px;
+height: 200px;
+
+
+
+}
+
+
+
+#btnMove2 #bas{
+  display: flex;
+position: absolute;
+
+align-self: end;
+width: 100%; 
+
+
+background-color: red;
+}
+
+#btnMove2 #haut{
+display: flex;
+position: absolute;
+
+align-self: flex-start;
+width: 100%; 
+
+
+background-color:crimson;
+}
+
+
+
+
+
+
+ 
+ #btnMove2{
+position: absolute;
+display: flex;
+
+
+justify-content: center;
+align-content: center;
+align-self: center;
+align-items: center;
+
+/* justify-self: center; */
+flex-direction: row;
+
+/* top:0; */
+/* right:50px; */
+width: 50px;
+
+
+
+height: 100px;
+
+
+
+background-color: aquamarine;
+/* height:100px; */
+
+ }
+
+/* #btnMove2 #left{
+display: flex;
+justify-content: flex-start;
+/* align-self: flex-start; */
+
+
+/* height: 100px; */
+
+
+
+
+#right{
+
+position: absolute;
+display: flex;
+
+right:0;
+/* height: 100px; */
+background-color: blue;
+width: 50px;
+height: 50px;
+
+
+}
+
+#left {
+position: absolute;
+display: flex;
+
+
+left: 0;
+/* top: 0; */
+
+/* margin: auto; */
+/* height: 100px; */
+background-color: blue;
+height: 50px;
+width: 50px;
+
+
+}
+
+
+
 

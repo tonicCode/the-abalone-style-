@@ -78,7 +78,7 @@ export class Graphics {
     // draw outside 
 
     toDrawOutside(createOutside){
-console.log(" out :",createOutside)
+// console.log(" out :",createOutside)
 
 
  this.ctx.strokeStyle="yellow";

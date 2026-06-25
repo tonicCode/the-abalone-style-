@@ -119,37 +119,13 @@ break;
 
 
 
-//   moveCursor.toMoveLef();   
-//   this.update();
 
-
-  //console.log("??",moveCursor.curseurs.posX);
-
-   // this.paraCurseur.posX+=20;
-   //this.plat.toMove();
- 
-//console.log("param curs : ",this.paraCurseur)
-          
-    //const cas=this.plat.getCase(2,0);
-         
-      // console.log(cas)
-
-//this.plat.curseurs=this.plat.createCurseur(mouseX,mouseY,20,20);
-    //console.log("lors du clicl",this.plat.curseurs)
-    
-   // this.updateCall();
-          
-          
-            
-            
-            // pour chaque pion bleu 
-          /*  this.controlCursor.pionsA.forEach(ele => {
-                if (mouseX >= ele.posX && mouseX <= ele.posX + ele.width && mouseY >= ele.posY && mouseY <= ele.posY + ele.height) {
-                    this.controlCursor.drawCursor(ele.posX, ele.posY, this.paraCurseur.cursorWidth, this.paraCurseur.cursorHeight);
-                }
-            });*/
      
     }
+
+// control clavier pc 
+
+
     toPushKey(moveCursor) {
         document.addEventListener("keydown", (event) => {
             switch (event.key) {
