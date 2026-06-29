@@ -225,12 +225,24 @@ let positions=this.getCase(this.countX, this.countY)
 
 
 this.selectionsPions.push(positions);
-// console.log("selected pion : ",this.selectionsPions)
+//  console.log("selected pion : ",this.selectionsPions)
+
+
+
 
 }
 
 
    
+
+
+
+
+
+
+
+
+
    
     
 }

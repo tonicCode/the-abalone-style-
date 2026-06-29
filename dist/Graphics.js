@@ -161,22 +161,36 @@ this.ctx.strokeRect(curseurs.posX,curseurs.posY
 
 toDrawSelection(plateau, moveable ){
 
-console.log("movable : ",moveable.isEmpty);
-console.log("pions : ",plateau);
+
+// console.log("pions : ",plateau);
 
 // if(moveable){
-this.ctx.strokeStyle="red";
+
+// console.log("???? :" , plateau.selectionsPions[plateau.countX]);
+
+// let selectX=plateau.selectionsPions[plateau.countX]*20;
+// let selectY=plateau.selectionsPions[plateau.countY]*20;
+
+// console.log("select :", plateau.selectionsPions);
 
 
-let x=plateau.countX*20;
-let y=plateau.countY*20;
 
 
-if(moveable.isEmpty){
+for(const e of plateau.selectionsPions){
 
-this.ctx.strokeRect(x, y,20,20);
+// console.log("e :" , e);
+
+let basePosX=e.x*20;
+let basePosY=e.y*20;
+
+
+
+//if(moveable.isEmpty){
+this.ctx.strokeStyle="yellow";
+this.ctx.strokeRect(basePosX+this.plateauPosX+this.outsideX, basePosY+this.plateauPosY+this.outsideY,20,20);
+
+//}
 }
-
 
 }
 

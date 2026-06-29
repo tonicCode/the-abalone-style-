@@ -30,14 +30,15 @@ this.gmv = new GameMoveValidator( this.createPlateau);
 
 
         this.graphics.toDrawPions(this.createPlateau);
-// this.curseurs.createCurseur(this.createPlateau.createBorder().posX , this.createPlateau.createBorder().posY);
+// this.graphics.toDrawSelection(this.createPlateau,this.gmv);
+
  this.graphics.drawCursor(this.createPlateau.newCurseur , this.createPlateau ,this.gmv);
 
  this.createPlateau.createOutside();
 this.graphics.toDrawOutside(this.createPlateau.ext);
 
 
-        this.controls.toClick(this.createPlateau);
+        this.controls.toClick(this.createPlateau,this.gmv);
           this.controls.toPushKey(this.createPlateau,this.gmv);
   
           
@@ -72,7 +73,7 @@ this.graphics.drawCursor(this.createPlateau.newCurseur , this.createPlateau,this
         this.graphics.toDrawOutside(this.createPlateau.ext);
        // this.controls.toClick(this.createPlateau);
 // this.graphics.toDrawSelection(this.createPlateau.selectionsPions,this.gmv.isEmpty);
-
+// this.graphics.toDrawSelection(this.createPlateau,this.gmv);
 
 //    this.loop();
  

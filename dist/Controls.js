@@ -26,7 +26,7 @@ this.btnSelect=document.getElementsByTagName("input");
         // this.dy=1;
         // let movePosPions= this.plat.createPions();
     //}
-    toClick(moveCursor) {
+    toClick(moveCursor,gmv) {
         
         
      
@@ -38,6 +38,15 @@ this.btnSelect=document.getElementsByTagName("input");
         
 
 switch(ele.value){
+   
+case "valid" : ele.addEventListener("click", (event) => {
+
+gmv.combinationValid(moveCursor.selectionsPions,moveCursor.countX , moveCursor.countY);
+//  console.log(";;;;;" , moveCursor.selectionsPions , moveCursor.countX,moveCursor.countY)
+
+})
+
+
 
 case "bas":
         ele.addEventListener("click", (event) => {
